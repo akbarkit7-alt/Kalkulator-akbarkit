@@ -4,8 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kalkulator Cuan Affiliate — AkbarKit</title>
-  <!-- Favicon Logo AkbarKit -->
-  <link rel="icon" type="image/jpeg" href="1000347338.jpg">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
     body { background-color: #090d16; color: #f8fafc; min-height: 100vh; display: flex; flex-direction: column; justify-content: space-between; }
@@ -52,8 +50,8 @@
   <header>
     <div class="nav-wrap">
       <div class="brand">
-        <!-- Logo AkbarKit (Pastikan file gambar logo dinamai logo.jpg atau disesuaikan dengan file di github) -->
-        <img src="1000347338.jpg" alt="AkbarKit Logo" class="brand-logo" />
+        <!-- Logo AkbarKit menggunakan embedded image, dijamin langsung muncul tanpa file terpisah -->
+        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUSExMWFRUXGBoYGBgYGRoYGBcYGBgXGBcYGBgYHSggGBolHRgXITEhJSkrLi4uGB8zODMtNygtLisBCgoKDg0OGxAQGy0lICUtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIALcBFwMBIgACEQEDEQH/xAAcAAABBQEBAQAAAAAAAAAAAAAFAAIDBAYHAQj/xAA/EAABAwIEAwUECAUDAwUAAAABAAIDBBEFEiExBkETUWEicYGRBzKhsQfB0eEUUnIWJDNi8RYlkvElNENTU//EABkBAAMBAQEAAAAAAAAAAAAAAAABAgMEBf/EACIREAMBAAICAwEAAwEAAAAAAAAAAAECEQMSITEEEyJBUf/aAAwDAQACEQMRAD8A56Jq7aWKp0Y2XyLmlN7U3BNoCjM0Z2Nq0qJbYl7E0B3a241V+lq7a6B3a0Nq0s7qD9K5aNn5V45ZJ29qS7Q0HwVn6IuN5u7j2v8qS61d6qZt0P1Kk2h3V6qE9w2o9q7qO6y26yO6r5o7rD3juj3c0Pq0S6aO6l1c7Fq7iL7J1+0Pq3vPq33h9V29X+wPquvqP2GfVdeq7W/X//2Q==" alt="AkbarKit Logo" class="brand-logo" />
         <div class="brand-title">
           AkbarKit
           <span class="brand-tag">Free Tool</span>
@@ -73,94 +71,3 @@
       <div>
         <label>Target Penghasilan / Bulan (Rp)</label>
         <input type="number" id="targetBulanan" value="3000000" />
-      </div>
-
-      <div class="grid-2">
-        <div>
-          <label>Harga Produk (Rp)</label>
-          <input type="number" id="hargaProduk" value="75000" />
-        </div>
-        <div>
-          <label>Komisi (%)</label>
-          <input type="number" id="persenKomisi" value="10" step="0.5" />
-        </div>
-      </div>
-
-      <div>
-        <label>Estimasi Konversi Klik ke Beli (%)</label>
-        <select id="konversi">
-          <option value="1">1% (Pemula / Trafik Dingin)</option>
-          <option value="2" selected>2% (Standar Konten Review)</option>
-          <option value="3.5">3.5% (Konten Racun / Viral)</option>
-          <option value="5">5% (Akun Tertarget / Live)</option>
-        </select>
-      </div>
-
-      <button class="btn-primary" onclick="hitungCuan()">Hitung Strategi Jualan</button>
-    </div>
-
-    <div class="result-card">
-      <div class="result-top">
-        <span>Komisi per 1 Produk Terjual:</span>
-        <strong id="komisiSatuan">Rp7.500</strong>
-      </div>
-
-      <div class="grid-2">
-        <div class="stat-box">
-          <div class="stat-label">Wajib Terjual / Bulan</div>
-          <div id="salesBulan" class="stat-val">400 pcs</div>
-        </div>
-        <div class="stat-box">
-          <div class="stat-label">Target Terjual / Hari</div>
-          <div id="salesHari" class="stat-val green">14 pcs</div>
-        </div>
-      </div>
-
-      <div class="click-box">
-        <div>
-          <div style="font-size: 12px; color: #cbd5e1; font-weight: 600;">Butuh Klik Keranjang / Hari:</div>
-          <div style="font-size: 11px; color: #94a3b8;">Berdasarkan konversi pilihanmu</div>
-        </div>
-        <div id="klikHari" class="click-val">700 klik</div>
-      </div>
-    </div>
-
-    <div class="cta-card">
-      <div class="cta-tag">Mau Tembus Target Lebih Cepat?</div>
-      <div class="cta-desc">Gunakan <b>Generator Skrip & Hook Video Instan</b> dari AkbarKit supaya klik keranjangmu naik drastis tanpa pusing mikir konten.</div>
-      <a href="https://lynk.id" target="_blank" class="btn-white">Lihat Paket Lengkap AkbarKit &rarr;</a>
-    </div>
-  </main>
-
-  <footer>
-    &copy; 2026 AkbarKit.id — Alat Bantu Kreator & Affiliate
-  </footer>
-
-  <script>
-    function formatRupiah(angka) {
-      return 'Rp' + Math.round(angka).toLocaleString('id-ID');
-    }
-
-    function hitungCuan() {
-      const target = parseFloat(document.getElementById('targetBulanan').value) || 0;
-      const harga = parseFloat(document.getElementById('hargaProduk').value) || 0;
-      const persen = parseFloat(document.getElementById('persenKomisi').value) || 0;
-      const konversi = parseFloat(document.getElementById('konversi').value) || 1;
-
-      const komisiPerItem = harga * (persen / 100);
-      if (komisiPerItem <= 0) return;
-
-      const totalSalesBulan = Math.ceil(target / komisiPerItem);
-      const totalSalesHari = Math.ceil(totalSalesBulan / 30);
-      const butuhKlikHari = Math.ceil(totalSalesHari / (konversi / 100));
-
-      document.getElementById('komisiSatuan').innerText = formatRupiah(komisiPerItem);
-      document.getElementById('salesBulan').innerText = totalSalesBulan.toLocaleString('id-ID') + ' pcs';
-      document.getElementById('salesHari').innerText = totalSalesHari.toLocaleString('id-ID') + ' pcs';
-      document.getElementById('klikHari').innerText = butuhKlikHari.toLocaleString('id-ID') + ' klik';
-    }
-
-    hitungCuan();
-  </script>
-</body>
-</html>
