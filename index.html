@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kalkulator Cuan Affiliate — AkbarKit</title>
+  <!-- Favicon Logo Akbar Kit -->
+  <link rel="icon" type="image/jpeg" href="1000347338.jpg">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
     body { background-color: #090d16; color: #f8fafc; min-height: 100vh; display: flex; flex-direction: column; justify-content: space-between; }
@@ -11,37 +13,44 @@
     .nav-wrap { max-width: 440px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
     .brand { display: flex; align-items: center; gap: 10px; }
     
-    /* Logo Bulat AkbarKit */
-    .brand-logo { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; border: 1.5px solid #d4af37; box-shadow: 0 2px 8px rgba(212, 175, 55, 0.3); }
+    /* Logo Bulat Akbar Kit */
+    .brand-logo { width: 38px; height: 38px; border-radius: 50%; object-fit: cover; border: 1.5px solid #d4af37; box-shadow: 0 2px 10px rgba(212, 175, 55, 0.4); }
     
     .brand-title { font-weight: 700; font-size: 16px; color: #ffffff; display: flex; flex-direction: column; }
-    .brand-tag { font-size: 10px; color: #34d399; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; }
+    .brand-tag { font-size: 10px; color: #34d399; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
     
     .nav-btn { font-size: 12px; background: #1e293b; border: 1px solid #334155; color: #34d399; padding: 6px 12px; border-radius: 99px; text-decoration: none; font-weight: 600; }
+    
     main { max-width: 440px; width: 100%; margin: 0 auto; padding: 20px 16px; display: flex; flex-direction: column; gap: 18px; }
+    
     .hero { text-align: center; }
-    .hero h2 { font-size: 22px; font-weight: 800; line-height: 1.25; margin-bottom: 6px; }
+    .hero h2 { font-size: 21px; font-weight: 800; line-height: 1.25; margin-bottom: 6px; color: #ffffff; }
     .hero p { font-size: 13px; color: #94a3b8; line-height: 1.4; }
+    
     .card { background: #0f172a; border: 1px solid #1e293b; border-radius: 16px; padding: 18px; display: flex; flex-direction: column; gap: 14px; box-shadow: 0 10px 25px rgba(0,0,0,0.4); }
     label { display: block; font-size: 11px; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
-    input, select { width: 100%; background: #020617; border: 1px solid #334155; border-radius: 12px; padding: 12px 14px; color: #ffffff; font-size: 15px; font-weight: 600; outline: none; }
-    input:focus, select:focus { border-color: #10b981; }
+    input, select { width: 100%; background: #020617; border: 1px solid #334155; border-radius: 12px; padding: 12px 14px; color: #ffffff; font-size: 15px; font-weight: 600; outline: none; transition: 0.2s; }
+    input:focus, select:focus { border-color: #10b981; box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15); }
     .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-    .btn-primary { width: 100%; background: #10b981; color: #020617; font-weight: 800; font-size: 15px; padding: 14px; border: none; border-radius: 12px; cursor: pointer; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3); }
-    .btn-primary:active { transform: scale(0.98); }
-    .result-card { background: linear-gradient(145deg, #064e3b 0%, #0f172a 100%); border: 1px solid rgba(16, 185, 129, 0.4); border-radius: 16px; padding: 18px; display: flex; flex-direction: column; gap: 14px; }
-    .result-top { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(16, 185, 129, 0.2); padding-bottom: 12px; font-size: 13px; color: #cbd5e1; }
+    
+    .result-card { background: linear-gradient(145deg, #064e3b 0%, #0f172a 100%); border: 1px solid rgba(16, 185, 129, 0.4); border-radius: 16px; padding: 18px; display: flex; flex-direction: column; gap: 14px; box-shadow: 0 8px 20px rgba(6, 78, 59, 0.3); }
+    .result-top { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(16, 185, 129, 0.25); padding-bottom: 12px; font-size: 13px; color: #cbd5e1; }
     .result-top strong { font-size: 16px; color: #34d399; }
+    
     .stat-box { background: rgba(2, 6, 23, 0.7); border: 1px solid #1e293b; border-radius: 12px; padding: 12px; text-align: center; }
-    .stat-label { font-size: 11px; color: #94a3b8; }
-    .stat-val { font-size: 20px; font-weight: 800; margin-top: 4px; color: #ffffff; }
+    .stat-label { font-size: 11px; color: #94a3b8; font-weight: 500; }
+    .stat-val { font-size: 19px; font-weight: 800; margin-top: 4px; color: #ffffff; }
     .stat-val.green { color: #34d399; }
+    
     .click-box { background: rgba(2, 6, 23, 0.7); border: 1px solid #1e293b; border-radius: 12px; padding: 14px; display: flex; justify-content: space-between; align-items: center; }
     .click-val { font-size: 18px; font-weight: 800; color: #fbbf24; }
+    
     .cta-card { background: #0f172a; border: 1px solid #1e293b; border-radius: 16px; padding: 16px; text-align: center; display: flex; flex-direction: column; gap: 10px; }
     .cta-tag { font-size: 11px; font-weight: 700; color: #34d399; text-transform: uppercase; letter-spacing: 0.6px; }
     .cta-desc { font-size: 13px; color: #cbd5e1; line-height: 1.45; }
-    .btn-white { display: block; width: 100%; background: #ffffff; color: #020617; font-weight: 700; font-size: 14px; padding: 12px; border-radius: 12px; text-decoration: none; }
+    .btn-white { display: block; width: 100%; background: #ffffff; color: #020617; font-weight: 700; font-size: 14px; padding: 12px; border-radius: 12px; text-decoration: none; transition: 0.2s; }
+    .btn-white:active { transform: scale(0.98); }
+    
     footer { text-align: center; padding: 16px; font-size: 12px; color: #64748b; border-top: 1px solid #0f172a; }
   </style>
 </head>
@@ -50,24 +59,114 @@
   <header>
     <div class="nav-wrap">
       <div class="brand">
-        <!-- Logo AkbarKit menggunakan embedded image, dijamin langsung muncul tanpa file terpisah -->
-        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUSExMWFRUXGBoYGBgYGRoYGBcYGBgXGBcYGBgYHSggGBolHRgXITEhJSkrLi4uGB8zODMtNygtLisBCgoKDg0OGxAQGy0lICUtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIALcBFwMBIgACEQEDEQH/xAAcAAABBQEBAQAAAAAAAAAAAAAFAAIDBAYHAQj/xAA/EAABAwIEAwUECAUDAwUAAAABAAIDBBEFEiExBkETUWEicYGRBzKhsQfB0eEUUnIWJDNi8RYlkvElNENTU//EABkBAAMBAQEAAAAAAAAAAAAAAAABAgMEBf/EACIREAMBAAICAwEAAwEAAAAAAAAAAAECEQMSITEEEyJBUf/aAAwDAQACEQMRAD8A56Jq7aWKp0Y2XyLmlN7U3BNoCjM0Z2Nq0qJbYl7E0B3a241V+lq7a6B3a0Nq0s7qD9K5aNn5V45ZJ29qS7Q0HwVn6IuN5u7j2v8qS61d6qZt0P1Kk2h3V6qE9w2o9q7qO6y26yO6r5o7rD3juj3c0Pq0S6aO6l1c7Fq7iL7J1+0Pq3vPq33h9V29X+wPquvqP2GfVdeq7W/X//2Q==" alt="AkbarKit Logo" class="brand-logo" />
+        <!-- Logo Akbar Kit diambil dari file gambar di folder github -->
+        <img src="1000347338.jpg" alt="Akbar Kit Logo" class="brand-logo" />
         <div class="brand-title">
-          AkbarKit
-          <span class="brand-tag">Free Tool</span>
+          Akbar Kit
+          <span class="brand-tag">Affiliate Tool</span>
         </div>
       </div>
-      <a href="https://lynk.id" target="_blank" class="nav-btn">Tools Lainnya &rarr;</a>
+      <a href="https://lynk.id" target="_blank" class="nav-btn">Katalog Lainnya &rarr;</a>
     </div>
   </header>
 
   <main>
     <div class="hero">
       <h2>Kalkulator Target Cuan Affiliate</h2>
-      <p>Hitung berapa produk yang harus terjual untuk tembus target penghasilanmu.</p>
+      <p>Hitung berapa produk & klik keranjang yang kamu butuhkan untuk tembus target bulanan.</p>
     </div>
 
     <div class="card">
       <div>
         <label>Target Penghasilan / Bulan (Rp)</label>
-        <input type="number" id="targetBulanan" value="3000000" />
+        <input type="number" id="targetBulanan" value="3000000" oninput="hitungCuan()" />
+      </div>
+
+      <div class="grid-2">
+        <div>
+          <label>Harga Produk (Rp)</label>
+          <input type="number" id="hargaProduk" value="75000" oninput="hitungCuan()" />
+        </div>
+        <div>
+          <label>Komisi (%)</label>
+          <input type="number" id="persenKomisi" value="10" step="0.5" oninput="hitungCuan()" />
+        </div>
+      </div>
+
+      <div>
+        <label>Estimasi Konversi Klik ke Beli (%)</label>
+        <select id="konversi" onchange="hitungCuan()">
+          <option value="1">1% (Pemula / Trafik Dingin)</option>
+          <option value="2" selected>2% (Standar Konten Review)</option>
+          <option value="3.5">3.5% (Konten Racun / Viral)</option>
+          <option value="5">5% (Akun Tertarget / Live)</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="result-card">
+      <div class="result-top">
+        <span>Komisi per 1 Produk Terjual:</span>
+        <strong id="komisiSatuan">Rp7.500</strong>
+      </div>
+
+      <div class="grid-2">
+        <div class="stat-box">
+          <div class="stat-label">Wajib Terjual / Bulan</div>
+          <div id="salesBulan" class="stat-val">400 pcs</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">Target Terjual / Hari</div>
+          <div id="salesHari" class="stat-val green">14 pcs</div>
+        </div>
+      </div>
+
+      <div class="click-box">
+        <div>
+          <div style="font-size: 12px; color: #cbd5e1; font-weight: 600;">Butuh Klik Keranjang / Hari:</div>
+          <div style="font-size: 11px; color: #94a3b8;">Berdasarkan konversi pilihanmu</div>
+        </div>
+        <div id="klikHari" class="click-val">700 klik</div>
+      </div>
+    </div>
+
+    <div class="cta-card">
+      <div class="cta-tag">Mau Tembus Target Lebih Cepat?</div>
+      <div class="cta-desc">Gunakan koleksi template, alat optimasi, dan panduan digital eksklusif dari <b>Akbar Kit</b>.</div>
+      <a href="https://lynk.id" target="_blank" class="btn-white">Kunjungi Katalog Akbar Kit &rarr;</a>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2026 Akbar Kit. All Rights Reserved.
+  </footer>
+
+  <script>
+    function formatRupiah(angka) {
+      return 'Rp' + Math.round(angka).toLocaleString('id-ID');
+    }
+
+    function hitungCuan() {
+      const target = parseFloat(document.getElementById('targetBulanan').value) || 0;
+      const harga = parseFloat(document.getElementById('hargaProduk').value) || 0;
+      const persen = parseFloat(document.getElementById('persenKomisi').value) || 0;
+      const konversi = parseFloat(document.getElementById('konversi').value) || 1;
+
+      const komisiPerItem = harga * (persen / 100);
+      if (komisiPerItem <= 0) return;
+
+      const totalSalesBulan = Math.ceil(target / komisiPerItem);
+      const totalSalesHari = Math.ceil(totalSalesBulan / 30);
+      const butuhKlikHari = Math.ceil(totalSalesHari / (konversi / 100));
+
+      document.getElementById('komisiSatuan').innerText = formatRupiah(komisiPerItem);
+      document.getElementById('salesBulan').innerText = totalSalesBulan.toLocaleString('id-ID') + ' pcs';
+      document.getElementById('salesHari').innerText = totalSalesHari.toLocaleString('id-ID') + ' pcs';
+      document.getElementById('klikHari').innerText = butuhKlikHari.toLocaleString('id-ID') + ' klik';
+    }
+
+    // Hitung otomatis saat halaman pertama kali dimuat
+    hitungCuan();
+  </script>
+</body>
+</html>
