@@ -4,15 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kalkulator Cuan Affiliate — AkbarKit</title>
+  <!-- Favicon Logo AkbarKit -->
+  <link rel="icon" type="image/jpeg" href="1000347338.jpg">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
     body { background-color: #090d16; color: #f8fafc; min-height: 100vh; display: flex; flex-direction: column; justify-content: space-between; }
-    header { background-color: #0f172a; border-bottom: 1px solid #1e293b; padding: 14px 16px; position: sticky; top: 0; z-index: 10; }
+    header { background-color: #0f172a; border-bottom: 1px solid #1e293b; padding: 12px 16px; position: sticky; top: 0; z-index: 10; }
     .nav-wrap { max-width: 440px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
-    .brand { display: flex; align-items: center; gap: 8px; }
-    .logo-badge { background: #10b981; color: #020617; font-weight: 800; padding: 4px 9px; border-radius: 8px; font-size: 13px; }
-    .brand-title { font-weight: 700; font-size: 17px; }
-    .brand-tag { font-size: 11px; color: #34d399; font-weight: 500; margin-left: 4px; }
+    .brand { display: flex; align-items: center; gap: 10px; }
+    
+    /* Logo Bulat AkbarKit */
+    .brand-logo { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; border: 1.5px solid #d4af37; box-shadow: 0 2px 8px rgba(212, 175, 55, 0.3); }
+    
+    .brand-title { font-weight: 700; font-size: 16px; color: #ffffff; display: flex; flex-direction: column; }
+    .brand-tag { font-size: 10px; color: #34d399; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; }
+    
     .nav-btn { font-size: 12px; background: #1e293b; border: 1px solid #334155; color: #34d399; padding: 6px 12px; border-radius: 99px; text-decoration: none; font-weight: 600; }
     main { max-width: 440px; width: 100%; margin: 0 auto; padding: 20px 16px; display: flex; flex-direction: column; gap: 18px; }
     .hero { text-align: center; }
@@ -46,8 +52,12 @@
   <header>
     <div class="nav-wrap">
       <div class="brand">
-        <span class="logo-badge">AK</span>
-        <div class="brand-title">AkbarKit <span class="brand-tag">Free Tool</span></div>
+        <!-- Logo AkbarKit (Pastikan file gambar logo dinamai logo.jpg atau disesuaikan dengan file di github) -->
+        <img src="1000347338.jpg" alt="AkbarKit Logo" class="brand-logo" />
+        <div class="brand-title">
+          AkbarKit
+          <span class="brand-tag">Free Tool</span>
+        </div>
       </div>
       <a href="https://lynk.id" target="_blank" class="nav-btn">Tools Lainnya &rarr;</a>
     </div>
